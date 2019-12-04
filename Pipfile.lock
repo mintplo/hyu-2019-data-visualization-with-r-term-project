@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "29e06568b0cc6bb64ae26a0c8e8d2366b1c9d9869c3d35cbc67f4fb7a76babee"
+            "sha256": "f2140e58734d894b2d3b3881d056d90b420642a4e4add19b749d6bc3504c98c9"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -45,6 +45,14 @@
                 "sha256:ea8b7f6188e6fa117537c3df7da9fc686d485087abf6ac197f9c46432f7e4a3c"
             ],
             "version": "==2.8"
+        },
+        "nba-api": {
+            "hashes": [
+                "sha256:45702ca7d5b4a0cdc3a037558f61d7b2457477e595f6aa726d390ef255daed9e",
+                "sha256:7dd82c3fc5caa157697324cd98aab236eb8dc0f8a9a1b7e997462f3582237736"
+            ],
+            "index": "pypi",
+            "version": "==1.1.5"
         },
         "numpy": {
             "hashes": [
@@ -139,6 +147,14 @@
                 "sha256:f3c5fd51747d450d4dcf6f923c81f78f811aab8205fda64b0aba34a4e48b0745"
             ],
             "version": "==1.25.7"
+        },
+        "yapf": {
+            "hashes": [
+                "sha256:712e23c468506bf12cadd10169f852572ecc61b266258422d45aaf4ad7ef43de",
+                "sha256:cad8a272c6001b3401de3278238fdc54997b6c2e56baa751788915f879a52fca"
+            ],
+            "index": "pypi",
+            "version": "==0.29.0"
         }
     },
     "develop": {}

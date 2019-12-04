@@ -9,6 +9,8 @@ verify_ssl = true
 pandas = "*"
 beautifulsoup4 = "*"
 requests = "*"
+yapf = "*"
+nba-api = "*"
 
 [requires]
 python_version = "3.7"
