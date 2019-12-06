@@ -286,7 +286,3 @@ ggplot(data=avg_player_stat_per_season_df, aes(x=SEASON_ID, y=MEAN_FG_PCT, fill=
   coord_cartesian(ylim=c(0.4, 0.5)) +
   guides(fill=FALSE) +
   theme_wsj()
-
-
-
-
