@@ -1,5 +1,6 @@
 library(data.table)
 library(ggplot2)
+library(ggthemes)
 library(readr)
 library(dplyr)
 library(stringr)
@@ -257,3 +258,35 @@ ggplot() +
   xlab('SEASONS') +
   ylab('SALARY') +
   ggtitle('30 YEARS HIGHEST AND LOWEST PLAYER SALARY LINE')
+
+######
+## 3. 연도별 샐러리 평균과 평균 성적
+######
+
+###
+## 전처리 과정 시작
+###
+avg_player_stat_per_season_df <- player_stat_df %>%
+  filter(!is.na(SALARY)) %>%
+  group_by(SEASON_ID) %>%
+  summarise(MEAN_SALARY=mean(SALARY, na.rm=TRUE), MEAN_FG_PCT=mean(FG_PCT, na.rm=TRUE))
+###
+## 전처리 과정 종료
+###
+
+# 연도별 샐러리 평균 
+ggplot(data=avg_player_stat_per_season_df, aes(x=SEASON_ID, y=MEAN_SALARY, fill=SEASON_ID)) +
+  geom_bar(stat='identity') +
+  guides(fill=FALSE) +
+  theme_wsj()
+
+# 연도별 평균 성적 막대 그래프
+ggplot(data=avg_player_stat_per_season_df, aes(x=SEASON_ID, y=MEAN_FG_PCT, fill=SEASON_ID)) +
+  geom_bar(stat='identity') +
+  coord_cartesian(ylim=c(0.4, 0.5)) +
+  guides(fill=FALSE) +
+  theme_wsj()
+
+
+
+
