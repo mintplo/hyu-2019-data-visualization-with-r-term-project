@@ -221,7 +221,8 @@ player_stat_df$SALARY <- parse_number(player_stat_df$SALARY)
 
 # Remove NA on SALARY COLUMN + Sampling for Correlation
 # PLAYER_AGE 별로 균등 샘플링
-# 통계의 함정: 연봉이 낮은 선수는 게임 수가 적으며(표본), 슛 성공확률이 상대적으로 높을 수 있다. GAME 수 40경기 이상으로 FILTER
+# 통계의 함정: 연봉이 낮은 선수는 게임 수가 적으며(표본)
+# 슛 성공확률이 상대적으로 높을 수 있다. GAME 수 40경기 이상으로 FILTER
 sampling_player_stat_df <- player_stat_df[!is.na(player_stat_df$SALARY),]
 sampling_player_stat_df %>% filter(GP >= 40) -> sampling_player_stat_df
 sampling_player_stat_df <- sampleBy(~PLAYER_AGE, frac=0.2, replace=FALSE, data=sampling_player_stat_df)
